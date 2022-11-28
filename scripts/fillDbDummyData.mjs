@@ -94,7 +94,7 @@ const fillDbWithDummyData = async () => {
 
   try {
     const response = await axios({
-      url: 'http://localhost:3000/api/addproduct',
+      url: 'http://localhost:3001/api/addproduct',
       method: 'post',
       data: dummyProductData,
     });

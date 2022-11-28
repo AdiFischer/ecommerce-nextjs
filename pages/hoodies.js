@@ -4,8 +4,7 @@ import mongoose from 'mongoose';
 import Image from 'next/image';
 import Product from '../models/Product';
 
-const Tshirts = ({ products }) => {
-
+const Hoodies = ({ products }) => {
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -47,10 +46,10 @@ export async function getServerSideProps(context) {
   if (!mongoose.connections[0].readyState) {
     await mongoose.connect(process.env.MONGO_URI);
   }
-  let products = await Product.find({ category: 'tshirts' });
+  let products = await Product.find({ category: 'hoodies' });
   return {
     props: { products: JSON.parse(JSON.stringify(products)) }, // will be passed to the page component as props
   };
 }
 
-export default Tshirts;
+export default Hoodies;
